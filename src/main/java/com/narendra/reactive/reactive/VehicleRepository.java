@@ -11,4 +11,6 @@ public interface VehicleRepository extends ReactiveCrudRepository<Vehicle, Integ
 
     @Query("SELECT * FROM vehicle WHERE model = :model")
     Flux<Vehicle> findByModel(String model);
-}
+
+
+ }
