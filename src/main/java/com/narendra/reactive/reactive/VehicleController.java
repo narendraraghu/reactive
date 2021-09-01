@@ -12,6 +12,9 @@ public class VehicleController {
     @Autowired
     public VehicleRepository vehicleRepository;
 
+    @Autowired
+    PersonRepository personRepository;
+
     @GetMapping("/model/{model}")
     public Flux<Vehicle> findByModel(@PathVariable String model) {
         return vehicleRepository.findByModel(model);
@@ -27,4 +30,7 @@ public class VehicleController {
     public Flux<Vehicle> findAll() {
         return vehicleRepository.findAll();
     }
+
+    @GetMapping("/count")
+    public Mono<Long> count(){     return personRepository.count();    }
 }
